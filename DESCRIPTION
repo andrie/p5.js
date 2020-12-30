@@ -8,6 +8,8 @@ Authors@R:
            email = "apdevries@gmail.com")
 Description: The `p5.js` package wraps the 'p5.js' JavaScript library.
 License: MIT + file LICENSE
+Imports: 
+    htmlwidgets
 Suggests: 
     covr,
     knitr,
@@ -19,6 +21,6 @@ VignetteBuilder:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.1
 URL: https://github.com/andrie/p5.js
 BugReports: https://github.com/andrie/p5.js/issues
