@@ -14,10 +14,10 @@ p5(code, width = NULL, height = NULL)
 \item{height}{height}
 }
 \value{
-
+An \code{htmlwidget} containing the sketch
 }
 \description{
 \ifelse{html}{\out{<a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a>}}{\strong{Experimental}}
 
-Create a \code{p5.js} htmlwidget
+Create a \code{p5.js} htmlwidget.
 }

@@ -1,0 +1,91 @@
+---
+title: "Introduction to p5.js"
+output: 
+  rmarkdown::html_vignette:
+    mathjax: NULL
+vignette: >
+  %\VignetteIndexEntry{Introduction to p5.js}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(p5.js)
+```
+
+
+The `p5.js` JavaScript library enables you to create visualizations and sound, and was designed as an easy way to learn programming and to create generative art.
+
+Here is the code for a simple `p5.js` sketch:
+
+```js
+function setup() {
+  createCanvas(width = 600, height = 400);
+  t = 0;
+  t_inc = 0.001;
+}
+
+function draw() {
+  translate(0, height / 2);
+  ellipse(width * 1 / 4, 0, height * 4 / 10);
+  ellipse(width * 2 / 4, 0, height * 5 / 10);
+  ellipse(width * 3 / 4, 0, height * 6 / 10);
+}
+```
+
+```{r}
+
+code <- 
+  "
+var t, t_inc;
+if (typeof knitr_width === 'undefined' || knitr_width === null) {
+    var knitr_width = 1024;
+}
+
+if (typeof knitr_height === 'undefined' || knitr_height === null) {
+    var knitr_height = 768;
+}
+
+function setup() {
+  p.createCanvas(knitr_width, knitr_height);
+  t = 0;
+  t_inc = 0.005;
+}
+
+function noiseColor(t, r = 0, g = 1, b = 1) {
+  return p.color(
+    p.noise(t + r) * 255, 
+    p.noise(t + g) * 255, 
+    p.noise(t + b) * 255
+  );
+}
+
+function draw() {
+  p.translate(0, p.height / 2);
+  p.fill(noiseColor(t));
+  p.ellipse(p.width * 3 / 4, p.height * 2/10, p.height * 4 / 10);
+  p.fill(noiseColor(t + 0.1));
+  p.ellipse(p.width * 2 / 4, p.height * 1/10, p.height * 5 / 10);
+  p.fill(noiseColor(t + 0.2));
+  p.ellipse(p.width * 1 / 4, 0, p.height * 6 / 10);
+  t += t_inc;
+}
+"
+```
+
+
+```{r}
+p5(code)
+```
+
+```{r, width = 1000}
+p5(code)
+```
+

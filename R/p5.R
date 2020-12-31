@@ -4,13 +4,13 @@
 #' @description
 #' `r lifecycle::badge('experimental')`
 #'
-#' Create a `p5.js` htmlwidget
+#' Create a `p5.js` htmlwidget.
 #'
 #' @param code Either a file with JavaScript code or a string with JavaScript
 #' @param width width
 #' @param height height
 #'
-#' @return
+#' @return An `htmlwidget` containing the sketch
 #' @export
 #'
 p5 <- function(code, width = NULL, height = NULL) {

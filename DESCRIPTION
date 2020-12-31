@@ -1,12 +1,14 @@
 Package: p5.js
-Title: The `p5.js` package wraps the 'p5.js' JavaScript library.
+Title: p5.js wraps the 'p5.js' JavaScript library, for creative coding.
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Andrie",
            family = "de Vries",
            role = c("aut", "cre"),
            email = "apdevries@gmail.com")
-Description: The `p5.js` package wraps the 'p5.js' JavaScript library.
+Description: The `p5.js` package wraps the 'p5.js' JavaScript library, for 
+    creative coding, with a focus on making coding accessible and inclusive for
+    artists, designers, educators, beginners, and anyone else!
 License: MIT + file LICENSE
 Imports: 
     htmlwidgets
@@ -16,8 +18,7 @@ Suggests:
     rmarkdown,
     testthat,
     withr
-VignetteBuilder: 
-    rmarkdown
+VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
